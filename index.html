@@ -1,0 +1,113 @@
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="Description" content="" />
+		<meta name="apple-touch-fullscreen" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			html {
+				font-size: 62.5%;
+			}
+			ul,
+			li {
+				list-style: none;
+				overflow: hidden;
+			}
+			.f-cb:after,
+			.f-cbli li:after {
+				display: block;
+				clear: both;
+				visibility: hidden;
+				height: 0;
+				overflow: hidden;
+				content: ".";
+			}
+			#swiperContainer {
+				box-sizing: border-box;
+				overflow: hidden;
+				background-color: gray;
+				position: relative;
+			}
+			#swiperContainer ul#swiperUl {
+				-webkit-backface-visibility: hidden;
+				box-sizing: border-box;
+				width: 4000px;
+			}
+			#swiperContainer ul#swiperUl li {
+				position: relative;
+				float: left;
+			}
+			#swiperContainer li img {
+				width: 100%;
+				display: block;
+			}
+			#m-swipercontrol {
+				text-align: center;
+				width: 100%;
+				position: absolute;
+				height: 40px;
+				line-height: 40px;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				z-index: 1;
+				background: rgba(0, 0, 0, 0.1);
+			}
+			#m-swipercontrol a {
+				font-size: 0;
+				height: 0;
+				padding: 3px;
+				background-color: red;
+				margin: 0 2px;
+				border-radius: 100%;
+			}
+			#m-swipercontrol a.current {
+				background-color: #333333;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="swiperContainer">
+			<!--<i id="swiperLeft">←</i><i id="swiperRight">→</i>-->
+			<ul id="swiperUl" class="f-cb">
+
+				<li>
+					<img src="images/1.jpg" />
+				</li>
+
+				<li>
+					<img src="images/2.jpg" />
+				</li>
+				<li>
+					<img src="images/3.jpg" />
+				</li>
+				<li>
+					<img src="images/4.jpg" />
+				</li>
+			</ul>
+			<div id="m-swipercontrol"></div>
+		</div>
+
+		<script src="resizeSwiper-1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var mySwiper = new SwiperModule({
+				mainObj: document.getElementById("swiperUl"),
+				leftObj: document.getElementById("swiperLeft"),
+				rightObj: document.getElementById("swiperRight"),
+				width: "auto",
+				height: "auto",
+				controller: true,
+				controllerObj: document.getElementById("m-swipercontrol")
+			});
+		</script>
+	</body>
+
+</html>
